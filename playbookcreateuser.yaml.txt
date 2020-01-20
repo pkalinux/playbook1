@@ -1,0 +1,11 @@
+- name: create user on nodes
+  hosts: all
+  tasks:
+    - name: creting user
+      user:
+       name: ansibletest
+       password: pramod
+    - name: create test folder in user home directory
+      file:
+        name: /home/ansibletest/testg
+        state: touch
